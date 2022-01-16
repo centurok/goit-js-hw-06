@@ -7,4 +7,5 @@ const categoriesArray = [...totalCategories]
 Elements: ${categories.children[1].children.length}`
   )
   .join("\n");
+
 console.log(categoriesArray);
