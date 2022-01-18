@@ -2,5 +2,11 @@ const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Con
 
 const ulElements = document.querySelector("#ingredients");
 
-const list = ingredients.reduce((str, item) => str + `<li>${item}</li>`, "");
-ulElements.innerHTML = list;
+const listItems = ingredients.map((item) => {
+  const listItem = document.createElement("li");
+  listItem.textContent = item;
+  listItem.classList.add("item");
+  return listItem;
+});
+
+ulElements.append(...listItems);

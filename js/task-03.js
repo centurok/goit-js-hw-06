@@ -14,9 +14,12 @@ const images = [
 ];
 const ulElements = document.querySelector(".gallery");
 
-images.forEach((element) => {
-  ulElements.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${element.url}" alt= "${element.alt}"  width = "768" height = "auto" /></li>`
-  );
-});
+const galleryItems = images
+  .map(
+    (item) => `<li class="gallery-item"><img src="${item.url}" alt="${item.alt}" width="1250"></li>`
+  )
+  .join("");
+
+ulElements.insertAdjacentHTML("beforeend", galleryItems);
+
+ulElements.style.listStyle = "none";
